@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const AddUsers = () => {
     const [user, setUser] = useState({});
 
-    const handleSubmit = event => {
+    const handleAddUser = event => {
         event.preventDefault();
         console.log(user);
 
@@ -38,12 +38,12 @@ const AddUsers = () => {
     return (
         <div>
             <h2>Add Users Please</h2>
-            <form onSubmit={handleSubmit}>
-                <input onBlur={handleInputBlur} type="text" name="name" id="" placeholder='Name' required />
+            <form onSubmit={handleAddUser}>
+                <input onChange={handleInputBlur} type="text" name="name" id="" placeholder='Name' required />
                 <br />
-                <input onBlur={handleInputBlur} type="text" name="address" id="" placeholder='Address' required />
+                <input onChange={handleInputBlur} type="text" name="address" id="" placeholder='Address' required />
                 <br />
-                <input onBlur={handleInputBlur} type="text" name="email" id="" placeholder='Email' required />
+                <input onChange={handleInputBlur} type="text" name="email" id="" placeholder='Email' required />
                 <br />
                 <button type="submit">Add User</button>
             </form>
